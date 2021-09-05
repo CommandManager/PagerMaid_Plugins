@@ -33,17 +33,7 @@ async def change_name_auto(context):
                 shift = 0
                 if int(minu) > 30: shift = 1
                 hsym = time_emoji_symb[(int(hour) % 12) * 2 + shift]
-                for_fun = random.random()
-                if for_fun < 0.10:
                     last_name = '%s时%s分 %s' % (hour, minu, hsym)
-                elif for_fun < 0.30:
-                    last_name = '%s:%s %s %s %s' % (hour, minu, p, abbwn, hsym)
-                elif for_fun < 0.60:
-                    last_name = '%s:%s %s UTC+8 %s' % (hour, minu, p, hsym)
-                elif for_fun < 0.90:
-                    last_name = '%s' % dizzy
-                else:
-                    last_name = '%s' % cake
                 await bot(UpdateProfileRequest(last_name=last_name))
         except:
             pass
